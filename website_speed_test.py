@@ -21,7 +21,7 @@ from __main__ import UrlTestManager
 url_test_m = UrlTestManager(sys.argv[1])
     '''
     url_test_t = timeit.Timer('url_test_m.url_open()', setup=setup_str)
-    print url_test_t.timeit()
+    print url_test_t.repeat(3, 1)
 
 if __name__ == "__main__":
     main()
