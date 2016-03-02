@@ -10,31 +10,23 @@ import threading
 
 
 class UrlHandler(object):
-    def __init__(self, tested_url):
-        self.tested_url = tested_url
-
-    def url_open(self):
-        return urllib2.urlopen(self.tested_url)
-
-
-class UrlProvider(object):
-    def __init__(self, url_stored_file):
-        self.url_stored_file = url_stored_file
+    def __init__(self):
         self.url_list = []
 
-    def make_list(self):
-        with open(self.url_stored_file) as f:
+    def make_list(self, url_stored_file):
+        with open(url_stored_file) as f:
             for line in f:
                 self.url_list.append(line[:-1])
         return self.url_list 
 
-class UrlTestManager(object):
-    def __init__(self, url_t):
-        self.url_t = url_t
+    def urlopen(self, test_url)
 
-    def test(self):
-        setup_str = 'from __main__ import UrlHandler; url_test_m = UrlHandler("%s")' % self.url_t
-        url_test_t = timeit.Timer('url_test_m.url_open()', setup=setup_str)
+    def test(self, test_url):
+        setup_str = "\
+            import urllib2
+            
+"
+        url_test_t = timeit.Timer('urllib2.urlopen(test_url)', setup=setup_str)
         return url_test_t.timeit(1)
 
 
@@ -42,26 +34,22 @@ class TestThread(threading.Thread):
     def __init__(self, threadID, test_q):
         threading.Thread.__init__(self)
         self.threadID = threadID
-        self.test_q = test_q
+        self.q = test_q
 
     def run(self):
-        main(self.test_q)
-
-
-def main(q):
-    while not exitFlag:
-        queue_lock.acquire()
-        if not work_queue.empty():
-            url = q.get()
-            url_access_time = UrlTestManager(url).test()
-            print "%-40s%.2fs" % (url, url_access_time)
-            queue_lock.release()
-        else:
-            queue_lock.release()
+        while not exitFlag:
+            queue_lock.acquire()
+            if not work_queue.empty():
+                url = self.q.get()
+                url_access_time = UrlHandler().test(url)
+                print "%-40s%.2fs" % (url, url_access_time)
+                queue_lock.release()
+            else:
+                queue_lock.release()
 
 
 url_file_path = "./urllist"
-url_list = UrlProvider(url_file_path).make_list()
+url_list = UrlHandler().make_list(url_file_path)
 exitFlag = 0
 queue_lock = threading.Lock()
 work_queue = Queue.Queue()
@@ -75,7 +63,7 @@ if __name__ == "__main__":
         work_queue.put(url)
     queue_lock.release()
 
-    while threadID <= 3:
+    while threadID <= 5:
         thread = TestThread(threadID, work_queue)
         thread.start()
         threads.append(thread)
