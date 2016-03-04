@@ -54,24 +54,29 @@ class ThreadControl(threading.Thread):
                 queue_lock.release()
         return
 
-    def queue_prepare(self):
-        return
+
+class QueueControl(object):
+    def __init__(self):
+        self.work_q = Queue.Queue()
+
+    def queue_prepare(self, queue_list):
+        queue_lock.acquire()
+        for queue in queue_list:
+            self.work_q.put(queue)
+        queue_lock.release()
+        return self.work_q
 
 
 url_file_path = "./urllist"
 url_list = UrlHandler().make_list(url_file_path)
 exitFlag = 0
 queue_lock = threading.Lock()
-work_q = Queue.Queue()
 threads = []
 threadID = 1
 
 
 if __name__ == "__main__":
-    queue_lock.acquire()
-    for url in url_list:
-        work_q.put(url)
-    queue_lock.release()
+    work_q = QueueControl().queue_prepare(url_list)
 
     while threadID <= 5:
         thread = ThreadControl(work_q)
