@@ -17,7 +17,7 @@ class UrlHandler(object):
         with open(url_stored_file) as f:
             for line in f:
                 self.url_list.append(line[:-1])
-        return self.url_list 
+        return self.url_list
 
     def url_open(self, url):
         return urllib2.urlopen(url)
@@ -37,7 +37,6 @@ test_url = "%s"''' % self.test_url
 
 
 class ThreadControl(threading.Thread):
-
     def __init__(self, test_q):
         threading.Thread.__init__(self)
         self.q = test_q
@@ -86,7 +85,7 @@ if __name__ == "__main__":
         threadID += 1
 
     while not work_q.empty():
-        pass 
+        pass
 
     exitFlag = 1
 
