@@ -5,8 +5,8 @@ import sys
 
 HOST = "smtp.gmail.com"
 SUBJECT = "alert from server"
-TO = "891287870@qq.com"
-FROM = "igameyunwei@gmail.com"
+TO = "*********@qq.com"
+FROM = "***********@gmail.com"
 
 try:
     TEXT = sys.argv[1]
@@ -24,6 +24,6 @@ BODY = '\r\n'.join((
 smtp = smtplib.SMTP()
 smtp.connect(HOST, "25")
 smtp.starttls()
-smtp.login(FROM, "bendan.521")
+smtp.login(FROM, "yourpassword")
 smtp.sendmail(FROM, [TO], BODY)
 smtp.quit()
