@@ -36,8 +36,7 @@ chkconfig mysqld on
 
 echo 'php install'
 useradd -r -s /sbin/nologin php-fpm
-yum install libxml2-devel libcurl-devel libjpeg-turbo-devel libpng-devel
-freetype-devel libmcrypt-devel epel-release libevent-devel -y
+yum install libxml2-devel libcurl-devel libjpeg-turbo-devel libpng-devel freetype-devel libmcrypt-devel epel-release libevent-devel -y
 ln -s /usr/lib64/libjpeg.so /usr/lib/libjpeg.so 
 ln -s /usr/lib64/libpng.so /usr/lib/libpng.so
 cd /usr/local/src
