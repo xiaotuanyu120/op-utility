@@ -8,16 +8,16 @@ Enter same passphrase again:
 Your identification has been saved in /root/.ssh/172.16.2.3.
 Your public key has been saved in /root/.ssh/172.16.2.3.pub.
 The key fingerprint is:
-0d:a7:93:bc:22:5a:14:dc:61:82:1f:c5:1b:5c:5f:ca root@ipg-http.ig.com
+0f:6b:ef:c7:8a:43:b5:31:8e:61:3c:67:22:fc:a8:ef root@ipg-http.ig.com
 The key's randomart image is:
 +--[ RSA 1024]----+
-|   ..++..   .    |
-|  ...++. o o     |
-|   .o..o. E      |
-|    .... *       |
-|    .   S .      |
-|   .     o       |
-|    o . .        |
-|   o . .         |
-|  .              |
+|                 |
+|                 |
+|     . .         |
+|      o * *      |
+|       =SX +     |
+|      . ++o      |
+|     . .o ..     |
+|    .  ..o  o    |
+|     oE .o+o     |
 +-----------------+

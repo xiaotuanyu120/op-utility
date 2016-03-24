@@ -7,6 +7,7 @@ def key_gen(host):
     key_file = '/root/.ssh/'+''.join(str(host).strip())
     if os.path.isfile(key_file):
         os.system("mv %s %s.old" % (key_file, key_file))
+        os.system("mv %s.pub %s.pub.old" % (key_file, key_file))
     #    key_file = key_file+"-"+datetime.datetime.now().strftime("%Y-%m-%d")
     child = pexpect.spawn('ssh-keygen -b 1024 -t rsa')
     fout = file('key_gen.log', 'w')
