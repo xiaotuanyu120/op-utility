@@ -10,6 +10,7 @@
 2、配置main.py，将需要生成key的host及其密码写进hosts={host: password, ...}
 
 3、fab -f main.py -l
+    
     Available commands:
         
         ssh_key_copy:拷贝key到相应host
