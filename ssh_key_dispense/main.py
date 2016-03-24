@@ -6,7 +6,7 @@ from keygen_ssh import key_gen as _key_gen
 from keygen_ssh import key_copy as _key_copy
 
 hosts = {
-        '172.16.2.3': 'Sudoroot88',
+        '172.16.2.3': 'yourpassword',
 }
 
 env.hosts = [x for x in hosts]
