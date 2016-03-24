@@ -2,7 +2,9 @@
 
 # 使用方法
 0、环境准备
+    
     linux安装ssh工具
+    
     python安装fabric包
 
 1、wget keygen_ssh.py和main.py到本地目录
