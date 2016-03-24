@@ -4,13 +4,17 @@
 0、环境准备
     linux安装ssh工具
     python安装fabric包
+
 1、wget keygen_ssh.py和main.py到本地目录
+
 2、配置main.py，将需要生成key的host及其密码写进hosts={host: password, ...}
+
 3、fab -f main.py -l
     Available commands:
         
         ssh_key_copy:拷贝key到相应host
         ssh_key_gen: 在/root/.ssh/下生成相应host的key，key为"host"&"host.pub"
+
 4、连接方法
     ssh -i /root/.ssh/host root@host
 
