@@ -10,8 +10,7 @@ cd /usr/local/src
 wget http://cdn.mysql.com/archives/mysql-5.1/mysql-5.1.72.tar.gz
 tar zxvf mysql-5.1.72.tar.gz
 cd mysql-5.1.72
-./configure --prefix=/data/server/mysql --with-mysqld-user=mysql
---with-charset=utf8 --with-extra-charsets=all
+./configure --prefix=/data/server/mysql --with-mysqld-user=mysql --with-charset=utf8 --with-extra-charsets=all
 make
 make install
 
@@ -19,8 +18,7 @@ mkdir /data/mysql-data
 chown -R mysql:mysql /data/server/mysql/
 chown -R mysql:mysql /data/mysql-data/
 
-./scripts/mysql_install_db --datadir=/data/mysql-data/
---basedir=/data/server/mysql/ --user=mysql
+./scripts/mysql_install_db --datadir=/data/mysql-data/ --basedir=/data/server/mysql/ --user=mysql
 cp ./support-files/mysql.server /etc/init.d/mysqld
 mv /etc/my.cnf /etc/my.cnf.old
 cp support-files/my-medium.cnf /etc/my.cnf
@@ -43,14 +41,7 @@ cd /usr/local/src
 wget http://museum.php.net/php5/php-5.3.3.tar.gz
 tar zxvf php-5.3.3.tar.gz
 cd php-5.3.3
-./configure --prefix=/data/server/php
---with-config-file-path=/data/server/php/etc --enable-fpm
---with-fpm-user=php-fpm --with-fpm-group=php-fpm
---with-mysql=/data/server/mysql --with-mysql-sock=/tmp/mysql.sock
---with-libxml-dir  --with-gd --with-jpeg-dir --with-png-dir --with-freetype-dir
---with-iconv-dir --with-zlib-dir --with-mcrypt --enable-soap
---enable-gd-native-ttf --enable-ftp --enable-mbstring --enable-exif
---disable-ipv6 --with-curl
+./configure --prefix=/data/server/php --with-config-file-path=/data/server/php/etc --enable-fpm --with-fpm-user=php-fpm --with-fpm-group=php-fpm --with-mysql=/data/server/mysql --with-mysql-sock=/tmp/mysql.sock --with-libxml-dir  --with-gd --with-jpeg-dir --with-png-dir --with-freetype-dir --with-iconv-dir --with-zlib-dir --with-mcrypt --enable-soap --enable-gd-native-ttf --enable-ftp --enable-mbstring --enable-exif --disable-ipv6 --with-curl
 make
 make install
 
