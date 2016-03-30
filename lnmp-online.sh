@@ -54,12 +54,9 @@ mkdir /etc/php
 ln -s /data/server/php /usr/local/php
 chkconfig --add php-fpm
 chkconfig php-fpm on
-sed -inr 's/.*pm.start_servers = 20.*/pm.start_servers = 20/g'
-/data/server/php/etc/php-fpm.conf
-sed -inr 's/.*pm.min_spare_servers = 5.*/pm.min_spare_servers = 5/g'
-/data/server/php/etc/php-fpm.conf
-sed -inr 's/.*pm.max_spare_servers = 35.*/pm.max_spare_servers = 35/g'
-/data/server/php/etc/php-fpm.conf
+sed -inr 's/.*pm.start_servers = 20.*/pm.start_servers = 20/g' /data/server/php/etc/php-fpm.conf
+sed -inr 's/.*pm.min_spare_servers = 5.*/pm.min_spare_servers = 5/g' /data/server/php/etc/php-fpm.conf
+sed -inr 's/.*pm.max_spare_servers = 35.*/pm.max_spare_servers = 35/g' /data/server/php/etc/php-fpm.conf
 sed -inr 's#.*pid = /data/server/php/var/run/php-fpm.pid.*#pid = /data/server/php/var/run/php-fpm.pid#g' /data/server/php/etc/php-fpm.conf
 
 
