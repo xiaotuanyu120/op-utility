@@ -30,4 +30,7 @@ ln -s /data/web/www /web/www
 ln -s /data/web/log /web/log
 echo "export PATH=$PATH:/usr/local/nginx/sbin:/usr/local/mysql/bin:/usr/local/php/bin" >> /etc/profile
 . /etc/profile
+
+cd /usr/local
+mv ./nginx-1.8.0* /tmp
 echo "****************INSTALL FINISH*****************"
