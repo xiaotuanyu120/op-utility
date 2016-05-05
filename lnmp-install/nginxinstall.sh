@@ -1,4 +1,4 @@
-echo 'nginx install'
+echo '****************nginx install****************'
 groupadd nginx
 useradd -g nginx nginx
 
@@ -27,3 +27,4 @@ ln -s /data/web/www /web/www
 ln -s /data/web/log /web/log
 echo "export PATH=$PATH:/usr/local/nginx/sbin:/usr/local/mysql/bin:/usr/local/php/bin" >> /etc/profile
 . /etc/profile
+echo "****************INSTALL FINISH*****************"
