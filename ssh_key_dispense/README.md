@@ -17,10 +17,15 @@
         
         ssh_key_copy:拷贝key到相应host
         ssh_key_gen: 在/root/.ssh/下生成相应host的key，key为"host"&"host.pub"
+        ssh_key_gen_rsa: 在/root/.ssh/下生成默认id_rsa id_rsa.pub
 
 4、连接方法
 
-    ssh -i /root/.ssh/host root@host
+    ## 若希望用每个host自己专属的key
+    ssh -i /root/.ssh/$host root@$host
+
+    ## 若希望用默认的id_rsa连接
+    ssh root@$host
 
 others:
 
