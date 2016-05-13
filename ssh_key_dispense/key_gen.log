@@ -1,23 +1,23 @@
 Generating public/private rsa key pair.
-Enter file in which to save the key (/root/.ssh/id_rsa): /root/.ssh/172.16.2.3
-/root/.ssh/172.16.2.3
+Enter file in which to save the key (/root/.ssh/id_rsa): /root/.ssh/id_rsa
+/root/.ssh/id_rsa
 Enter passphrase (empty for no passphrase): 
 
 
 Enter same passphrase again: 
-Your identification has been saved in /root/.ssh/172.16.2.3.
-Your public key has been saved in /root/.ssh/172.16.2.3.pub.
+Your identification has been saved in /root/.ssh/id_rsa.
+Your public key has been saved in /root/.ssh/id_rsa.pub.
 The key fingerprint is:
-0f:6b:ef:c7:8a:43:b5:31:8e:61:3c:67:22:fc:a8:ef root@ipg-http.ig.com
+6a:e2:13:ac:2a:3e:f3:a8:62:56:c4:92:d0:91:22:3a root@localhost.localdomain
 The key's randomart image is:
 +--[ RSA 1024]----+
-|                 |
-|                 |
-|     . .         |
-|      o * *      |
-|       =SX +     |
-|      . ++o      |
-|     . .o ..     |
-|    .  ..o  o    |
-|     oE .o+o     |
+| ..o             |
+|+ o              |
+|+.o              |
+|Eo o             |
+| .o.    S        |
+|   .o  .         |
+|  ....o          |
+|o=o..o           |
+|X++...           |
 +-----------------+
