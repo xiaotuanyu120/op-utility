@@ -12,7 +12,7 @@ groupadd mysql
 useradd -r -g mysql mysql
 
 ## source package unzip
-[[ -d mysql ]] || mkdir mysql && mv mysql /tmp && tmp_mv=1
+[[ -d mysql ]] || mkdir mysql && mv mysql /tmp && mkdir mysql && tmp_mv=1
 tar zxvf mysql-5.1.72.tar.gz -C mysql
 cd mysql
 
