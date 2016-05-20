@@ -12,7 +12,7 @@ groupadd mysql
 useradd -r -g mysql mysql
 
 ## source package unzip
-[[ -d mysql ]] || mkdir mysql && mv mysql /tmp && mkdir mysql && tmp_mv=1
+[[ -d mysql ]] || mkdir mysql && rm -rf mysql && mkdir mysql
 tar zxvf mysql-5.1.72.tar.gz -C mysql
 cd mysql
 
@@ -42,6 +42,3 @@ $BASEDIR/bin/mysqladmin -u root password "$(PASSWORD)"
 
 echo "export PATH=$PATH:$(BASEDIR)/bin" >> /etc/profile
 . /etc/profile
-
-## copy file moved to tmp back
-[[ tmp_mv ]] && mv ./mysql /tmp/mysql_source && mv /tmp/mysql .
