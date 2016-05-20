@@ -38,7 +38,7 @@ sed -inr "s#^datadir=#datadir=$(DATADIR)#g" /etc/init.d/mysqld
 ## service start and enanble
 chkconfig mysqld on
 /etc/init.d/mysqld start
-/usr/local/mysql/bin/mysqladmin -u root password "$(PASSWORD)"
+$BASEDIR/bin/mysqladmin -u root password "$(PASSWORD)"
 
 echo "export PATH=$PATH:$(BASEDIR)/bin" >> /etc/profile
 . /etc/profile
