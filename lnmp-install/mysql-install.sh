@@ -21,7 +21,7 @@ cd mysql
 make
 make install
 
-mkdir -p /data/mysql-data
+mkdir -p $DATADIR
 chown -R mysql:mysql $BASEDIR
 chown -R mysql:mysql $DATADIR
 
