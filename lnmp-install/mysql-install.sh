@@ -14,6 +14,7 @@ useradd -r -g mysql mysql
 ## source package unzip
 [[ -d mysql ]] || mkdir mysql && rm -rf mysql && mkdir mysql
 tar zxvf mysql-5.1.72.tar.gz -C mysql
+mv ./mysql/mysql-5.1.72/* ./mysql/
 cd mysql
 
 ## mysql install
