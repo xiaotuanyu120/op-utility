@@ -3,4 +3,5 @@
 
 LOGPATH=/web/www
 
-ls ${LOGPATH}/*.log|xargs -i python access_ip_sum.py {} {}.analysis
+mkdir -p LOGPATH/analysis
+ls ${LOGPATH}/*.log|xargs -i python access_ip_sum.py {} {}/analysis.analysis
