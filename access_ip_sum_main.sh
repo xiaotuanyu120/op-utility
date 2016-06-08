@@ -4,7 +4,7 @@
 LOGPATH=/web/log
 ANALYSIS=$LOGPATH/analysis
 
+mv $ANALYSIS ${ANALYSIS}-`date +%F%H:%M:%S`
 mkdir $ANALYSIS
-mv $ANALYSIS ${ANALYSIS}-`data +%F%H:%M:%S`
 ls ${LOGPATH}/*.log|xargs -i python access_ip_sum.py {} {}.analysis
 mv $LOGPATH/*.analysis $ANALYSIS
