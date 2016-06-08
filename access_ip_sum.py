@@ -30,6 +30,7 @@ def ip_count(ip_list):
 def save_ipcount(count_file, dest_file):
     if not isinstance(count_file, dict):
         raise InputError('input is bad!')
+    count_file = sorted(count_file.items(), key=lambda x:x[1])
     json.dump(count_file, open(dest_file, 'w'))
     return
 
