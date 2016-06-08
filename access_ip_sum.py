@@ -30,13 +30,18 @@ def ip_count(ip_list):
 def save_ipcount(count_file, dest_file):
     if not isinstance(count_file, dict):
         raise InputError('input is bad!')
-    count_file = sorted(count_file.items(), key=lambda x:x[1])
-    json.dump(count_file, open(dest_file, 'w'))
+    try:
+        with open(dest_file, 'a') as f:
+            for k,v in sorted(count_file.items(), key=lambda x:x[1]):
+                str_ip_count = "%-15s%-d\n" % (k,v)
+                f.write(str_ip_count)
+    except IOError as e:
+        print e
     return
 
 if __name__ == '__main__':
     log_file = sys.argv[1]
-    analysis_file = log_file+'.analysis'
+    analysis_file = sys.argv[2]
 
     ip_l = ip_get(log_file)
     ip_c = ip_count(ip_l)
