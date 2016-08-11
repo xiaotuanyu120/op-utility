@@ -15,20 +15,15 @@
     
     Available commands:
         
-        ssh_key_copy:拷贝key到相应host
-        ssh_key_gen: 在/root/.ssh/下生成相应host的key，key为"host"&"host.pub"
-        ssh_key_gen_rsa: 在/root/.ssh/下生成默认id_rsa id_rsa.pub
+        ssh_key_copy:     拷贝以host命名的key到相应host，并创建~/.ssh/config文件
+        ssh_key_copy_rsa: 拷贝默认的id_rsa的key到所有的host
+        ssh_key_gen:      在/root/.ssh/下生成相应host的key，key为"host"&"host.pub"
+        ssh_key_gen_rsa:  在/root/.ssh/下生成默认id_rsa id_rsa.pub
 
 4、连接方法
-
-    ## 若希望用每个host自己专属的key
-    ssh -i /root/.ssh/$host root@$host
-
-    ## 若希望用默认的id_rsa连接
-    ssh root@$host
+    ## 因为已经配置过~/.ssh/config，所以直接执行下面命令即可
+    ssh host
 
 others:
 
     如果host对应的key存在，keygen_ssh.py会将老key文件更名为"host.old"&"host.pub.old"
-    
-    如果不希望每次连接都指定-i key文件，可以在~/.ssh/config中做配置，详情请查看官网
