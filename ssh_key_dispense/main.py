@@ -8,9 +8,9 @@ from keygen_ssh import key_gen as _key_gen
 from keygen_ssh import key_copy as _key_copy
 
 hosts = {
-        '10.10.180.11': 'Sudoroot88',
-        '10.10.180.4': 'Sudoroot88',
-        '10.10.180.6': 'Sudoroot88',
+        '10.10.180.11': 'passwd',
+        '10.10.180.4': 'passwd',
+        '10.10.180.6': 'passwd',
 }
 
 env.hosts = [x for x in hosts]
